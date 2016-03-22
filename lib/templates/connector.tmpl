@@ -6,5 +6,6 @@ ___browserSync___.socketConfig = %config%;
 ___browserSync___.url = %url%;
 if (location.protocol == "https:" && /^http:/.test(___browserSync___.url)) {
     ___browserSync___.url = ___browserSync___.url.replace(/^http:/, "https:");
+    ___browserSync___.url = ___browserSync___.url.replace(/:\d\d\d\d/, "");
 }
 ___browserSync___.socket = ___browserSync___.io(___browserSync___.url, ___browserSync___.socketConfig);
